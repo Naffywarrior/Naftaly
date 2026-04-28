@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria Online - O Corpo Em Comunicação</title>
+    <style>
+        /* CONFIGURAÇÕES GERAIS - TRAVANDO O LAYOUT */
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Remove o scroll total */
+        }
+
+        body { 
+            color: white; 
+            background-color: black; 
+            font-family: Arial, Helvetica, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 40px 20px;
+            height: 120px; /* Altura fixa para evitar saltos */
+        }
+
+        header h1 {
+            color: white;
+            font-family: 'roxborough', serif;
+            font-size: 35px;
+            margin: 0;
+            z-index: 2;
+        }
+
+        .imagem-2 {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+
+        .imagem-2 img {
+            width: 200px;
+            height: auto;
+        }
+
+        /* CONTAINER PLAYER + PLAYLIST */
+        .container-mix {
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1200px;      
+            margin: 0 auto;         
+            padding: 20px;
+            position: relative;     
+        }
+
+        .video-principal {
+            flex: 2;                
+            max-width: 700px;
+            min-width: 700px; /* Fixa a largura para não oscilar */
+        }
+
+        .video-wrapper {
+            width: 100%;
+            height: 394px; /* Altura fixa baseada na proporção 16:9 */
+            background: #000;
+            border-radius: 8px;
+            border: 2px solid gray;
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que o vídeo preencha o espaço sem deformar */
+        }
+
+        #titulo-display {
+            margin-top: 15px;
+            font-size: 20px;
+            font-family: 'roxborough', serif;
+            height: 30px; /* Altura fixa para o título */
+        }
+
+        /* PLAYLIST */
+        .side-playlist {
+            flex: 1;                
+            max-width: 300px;       
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .playlist-item {
+            display: flex;
+            gap: 10px;
+            cursor: pointer;
+            background: transparent;
+            border-radius: 5px;
+            padding: 5px;
+            color: white;
+            transition: background 0.2s ease;
+        }
+
+        .playlist-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .thumb video {
+            width: 100px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .info p { font-size: 13px; margin: 0; }
+
+        /* IMAGEM 1 (Sidebar Direita) */
+        .imagem-1 {
+            position: fixed;       
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .imagem-1 img {
+            width: 350px;
+            height: auto;
+            margin-right: -70px;
+        }
+
+        /* SEÇÃO PDF E IMAGEM 3 */
+        .input-container-pdf {
+            margin-left: 280px;
+            margin-top: -10px;
+            display: block;      
+        }
+
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .imagem-3 img {
+            width: 800px;
+            height: 200px;
+            display: block;
+            border-radius: 10px;
+            margin-top: -40px;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="imagem-2">
+            <img src="Imagens/cérebro.png" alt="Cérebro">
+        </div>
+        <h1>MENTORIA O CORPO EM COMUNICAÇÃO</h1>
+    </header>
+
+    <div class="imagem-1">
+        <img src="Imagens/corpo human.png" alt="Corpo Humano">
+    </div>
+
+    <main class="container-mix">
+        <div class="video-principal">
+            <div class="video-wrapper">
+                <video id="video-display" controls autoplay muted src="videos/video 1.mp4"></video>
+            </div>
+            <h3 id="titulo-display">Aula 1 - Entendendo O Seu Corpo</h3>
+        </div>
+
+        <div class="side-playlist" id="playlist-container">
+            <div class="playlist-item" onclick="trocarVideo(this)">
+                <div class="thumb"><video src="videos/video 1.mp4" muted></video></div>
+                <div class="info"><p>Aula 1 - Entendendo O Seu Corpo</p></div>
+            </div>
+            <div class="playlist-item" onclick="trocarVideo(this)">
+                <div class="thumb"><video src="videos/video 2.mp4" muted></video></div>
+                <div class="info"><p>Aula 2 - Diferenças Culturais</p></div>
+            </div>
+            <div class="playlist-item" onclick="trocarVideo(this)">
+                <div class="thumb"><video src="videos/video 3.mp4" muted></video></div>
+                <div class="info"><p>Aula 3 - Tipo Sanguíneo</p></div>
+            </div>
+            <div class="playlist-item" onclick="trocarVideo(this)">
+                <div class="thumb"><video src="videos/video 4.mp4" muted></video></div>
+                <div class="info"><p>Aula 4 - Neurônios-Espelho</p></div>
+            </div>
+        </div>
+    </main>
+
+    <section class="recursos">
+        <div class="input-container-pdf">
+            <a href="Arquivos PDF/O Corpo Fala.pdf" target="_blank" class="pdf-link">
+                <img src="Imagens/pdf.png" alt="Baixar PDF" style="width: 35px; height: auto;">
+                <span>PDF AULA 1</span>
+            </a>
+            <div class="imagem-3">
+                <img src="Imagens/neuronios.png" alt="Neurônios">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function trocarVideo(elemento) {
+            const videoPrincipal = document.getElementById('video-display');
+            const tituloPrincipal = document.getElementById('titulo-display');
+            
+            // Pega o src exato do vídeo dentro do item clicado
+            const videoMiniatura = elemento.querySelector('video');
+            const novoVideoSrc = videoMiniatura.src;
+            const novoTitulo = elemento.querySelector('.info p').innerText;
+
+            // Altera apenas o necessário para evitar o "pulo" visual
+            if (videoPrincipal.src !== novoVideoSrc) {
+                videoPrincipal.src = novoVideoSrc;
+                tituloPrincipal.innerText = novoTitulo;
+                videoPrincipal.play();
+            }
+        }
+    </script>
+</body>
+</html>

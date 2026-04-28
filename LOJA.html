@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefícios - Segurança e Confiabilidade</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        /* CONFIGURAÇÕES GERAIS */
+        * { box-sizing: border-box; }
+        
+        html, body { 
+            margin: 0; 
+            height: 100vh; 
+            width: 100vw;
+            overflow: hidden; /* REMOVE O SCROLL TOTAL DA PÁGINA */
+        }
+
+        body { 
+            color: white; 
+            background-color: black; 
+            font-family: Arial, Helvetica, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; /* Distribui header, main e footer */
+        }
+
+        /* CABEÇALHO */
+        .header { padding-top: 30px; }
+        .h1-topo h1 {
+            font-size: 50px; /* Reduzi levemente para caber melhor sem scroll */
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            color: white;
+            font-family: 'roxborough', serif;
+            margin: 0;
+        }
+
+        .redes-sociais {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+        .redes-sociais a {
+            color: #ccc;
+            font-size: 1.0rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .redes-sociais a:hover { color: aliceblue; }
+
+        /* LAYOUT EM 3 COLUNAS */
+        .conteudo-principal {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;            
+            width: 100%;
+            padding: 20px;
+            font-family: 'roxborough', serif;
+            font-size: 22px; /* Ajuste para caber na tela sem scroll */
+            line-height: 1.4;
+            flex: 1; /* Faz o conteúdo ocupar o espaço central disponível */
+        }
+
+        .imagem1-beneficios, 
+        .imagem2-beneficios {
+            flex: 1; 
+            display: flex;
+            justify-content: center;
+        }
+
+        /* TAMANHOS DAS IMAGENS */
+        .imagem1-beneficios img {
+            width: 320px;
+            height: auto;       
+            border-radius: 10px;
+        }
+
+        .imagem2-beneficios img {
+            width: 280px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .conteudo-principal p {
+            flex: 2; 
+            text-align: center;
+            padding: 0 30px;
+        }
+
+        /* FOOTER */
+        .meu-footer {
+            background-color: black;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .link-icone {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+        }
+        .link-icone img { width: 60px; transition: 0.3s; }
+        .link-icone:hover img { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="h1-topo">
+            <h1>SEGURANÇA E CONFIABILIDADE</h1>
+        </div>
+        <nav>
+   <div class="redes-sociais">
+    <a href="https://www.facebook.com/people/Naftaly-Virginia/pfbid0cZ6fsgZ1ayFqA37c7yf8kkhudTKLdYQdF9y6pMC94LCfvSmKMKCtPu3CoN2fGJUEl/" target="_blank">
+    <i class="fab fa-facebook"></i> Facebook
+    </a>
+    <a href="https://www.instagram.com/nafywarrior/" target="_blank">
+        <i class="fab fa-instagram"></i> instagram
+    </a>
+    <a href="https://www.linkedin.com/in/naftaly-virginia-maciel-7725b4212?originalSubdomain=br" target="_blank">
+        <i class="fas fa-globe"></i> Linkedim
+    </a>
+   </div>
+</nav>
+    </header>
+
+    <main class="conteudo-principal">
+        <div class="imagem1-beneficios">
+            <img src="Imagens/mão-apontando.png" alt="apontar">
+        </div>
+
+        <p>
+            Nosso site foi desenvolvido para oferecer uma experiência segura, transparente e confiável em todas as etapas da sua navegação. Utilizamos boas práticas digitais para proteger seus dados, garantir privacidade e proporcionar tranquilidade tanto no acesso às informações quanto no direcionamento para a loja virtual.
+            <br><br>
+            Ao clicar no link da loja, você é direcionado para um ambiente seguro e confiável, com processos claros e protegidos.
+        </p>
+
+        <div class="imagem2-beneficios">
+            <img src="Imagens/cadeado.png" alt="fechar">
+        </div>
+    </main>
+
+    <footer class="meu-footer">
+        <div class="container-icone">
+            <a href="https://shopee.com.br" target="_blank" class="link-icone">
+                <img src="Imagens/iconesacola.png" alt="Visite nossa loja">
+                <span>LOJA</span>
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

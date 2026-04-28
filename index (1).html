@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Corpo Em Comunicação</title>
+    <style>
+        /* GERAL */
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; min-height: 100vh; }
+        body { 
+            color: white; 
+            background-color: black; 
+            font-family: Arial, Helvetica, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        h1 { 
+            color: white; 
+            text-align: center; 
+            margin-top: 5px; 
+            font-family: 'roxborough', serif; 
+            font-size: 40px; 
+            padding-top: 50px; 
+        }
+        a { color: white; text-decoration: none; transition: 0.3s; }
+        
+        /* NAV */
+        ul { display: flex; justify-content: space-around; list-style-type: none; align-items: center; padding: 16px; }
+        nav a:hover { color: green; }
+
+        /* VIDEO & IMAGENS HOME */
+        .video-container { text-align: center; margin-top: 20px; }
+        #video-principal { width: 100%; max-width: 640px; max-height: 350px; border: 2px solid gray; }
+        
+        .center-html { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 40px; }
+        .center-html img { max-width: 90%; height: auto; }
+        
+        .imagem-2home { text-align: center; margin-top: 40px; }
+        .imagem-2home img { max-width: 90%; height: auto; }
+
+        /* FORMULÁRIO DE AVALIAÇÃO */
+        .container-avaliacao { padding: 60px 20px; background-color: #111; margin-top: 50px; }
+        .moldura-avaliacao { max-width: 600px; margin: 0 auto; text-align: center; }
+        .texto-apoio { color: #ccc; margin-bottom: 20px; font-size: 0.9rem; }
+        
+        .form-estilo-clean { display: flex; flex-direction: column; gap: 15px; }
+        .form-estilo-clean input, .form-estilo-clean textarea { 
+            padding: 12px; border: 1px solid #444; background: #222; color: white; border-radius: 5px; 
+        }
+        .botao-roxo { 
+            background-color: #8a2be2; color: white; padding: 15px; border: none; 
+            border-radius: 5px; cursor: pointer; font-weight: bold; 
+        }
+        .botao-roxo:hover { background-color: #4b0082; }
+
+        /* FOOTER */
+        footer { margin-top: auto; background-color: black; text-align: center; padding: 40px 20px; }
+        .acessibilidade img { width: 20px; height: 30px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="SOBRE.html">SOBRE</a></li>
+                <li><a href="MENTORIAONLINE.html">MENTORIA ONLINE</a></li>
+                <li><a href="LOJA.html">LOJA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="video-container">
+            <video id="video-principal" controls loop autoplay muted playsinline>
+                <source src="videos/Bemvindos.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <h1>O Corpo Em Comunicação</h1>
+
+        <section class="center-html">
+            <img src="imagens/depoimento.png" alt="Depoimento 1" width="600" height="600">
+            <img src="imagens/depoimento2.png" alt="Depoimento 2" width="600" height="600">
+            <img src="imagens/depoimento3.png" alt="Depoimento 3" width="600" height="600">
+        </section>
+    </main>
+
+    <aside>
+        <div class="imagem-2home">
+            <img src="imagens/imagem-lateral.png" alt="seu corpo fala" width="500" height="600">
+        </div>
+    </aside>
+
+    <section class="container-avaliacao">
+        <div class="moldura-avaliacao">
+            <h1>AVALIAÇÃO</h1>
+            <p class="texto-apoio">
+                Sua visita até aqui é importante para nós, por isso fazemos constantes pesquisas sobre os interesses e objetivos dos nossos clientes para atualização do nosso conteúdo e entrega de um produto cada vez mais qualificado para você.
+            </p>
+
+            <form action="#" method="post" class="form-estilo-clean">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp" required>
+                <input type="number" name="idade" placeholder="Idade">
+                <textarea name="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+                <button type="submit" class="botao-roxo">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="acessibilidade">
+        <a href="https://w3.org" target="_blank">
+            <img src="imagens/acessibilidade (2).png" alt="Selo de Acessibilidade">
+        </a>
+    </footer>
+
+    <script src="mentoria.js"></script>
+</body>
+</html>
